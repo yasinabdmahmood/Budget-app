@@ -3,4 +3,10 @@ class Catagory < ApplicationRecord
 
   has_many :catagory_records, dependent: :destroy
   has_many :records, through: :catagory_records
+
+  # validationd
+  validates :name, presence: true
+  validates :icon, presence: true
+  validates :name, length: { maximum: 100 }
+  validates_associated :catagory_records
 end
