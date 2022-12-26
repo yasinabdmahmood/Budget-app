@@ -4,7 +4,7 @@ class Record < ApplicationRecord
   has_many :catagory_records, dependent: :destroy
   has_many :catagories, through: :catagory_record
 
-  # validationd
+  # validations
   validates :name, presence: true
   validates :amount, presence: true
   validates :amount, numericality: true
