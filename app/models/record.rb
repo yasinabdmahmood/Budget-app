@@ -4,11 +4,11 @@ class Record < ApplicationRecord
   has_many :catagory_records, dependent: :destroy
   has_many :catagories, through: :catagory_record
 
-   # validationd
-   validates :name, presence: true
-   validates :amount, presence: true
-   validates :amount, numericality: true
-   validates :amount, numericality:{ greater_than : 0 }
-   validates :name, length: { maximum: 100 }
-   validates_associated :catagory_records
+  # validationd
+  validates :name, presence: true
+  validates :amount, presence: true
+  validates :amount, numericality: true
+  validates :amount, numericality: { greater_than: 0 }
+  validates :name, length: { maximum: 100 }
+  validates_associated :catagory_records
 end
