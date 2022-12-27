@@ -4,7 +4,7 @@ class Catagory < ApplicationRecord
   has_many :catagory_records, dependent: :destroy
   has_many :records, through: :catagory_records
 
-  # validationd
+  # validations
   validates :name, presence: true
   validates :icon, presence: true
   validates :name, length: { maximum: 100 }
