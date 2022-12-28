@@ -1,0 +1,15 @@
+<h1>Catagory#new</h1>
+<p>Find me in app/views/catagory/new.html.erb</p>
+<%= form_with model: @new_catagory, url: catagory_create_path, method: :post, local: true, scope: :new_catagory do |f| %>
+    <div>
+    <%= f.label :Name %><br>
+    <%= f.text_field :name %>
+    </div>
+
+    <div>
+    <%= f.label :Icon %><br>
+    <%= f.text_field :icon %>
+    </div>
+
+    <%= f.submit "Save" %>
+<% end %>
