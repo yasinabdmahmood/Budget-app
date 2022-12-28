@@ -1,0 +1,27 @@
+<h1>Catagory#index</h1>
+<p>Find me in app/views/catagory/index.html.erb</p>
+<div class="container">
+<% @catagories.each do |catagory| %>
+<div  class='d-flex justify-content-between p-2 my-3 border'>
+    <div>
+    <img 
+    class="icon" 
+    style="width:50px"
+    src=<%= catagory.icon %>
+    alt="face" />
+    </div>
+    <div class="flex-grow-1 px-2">
+        <h2><%= catagory.name%></h2>
+        <span><%= catagory.created_at %></span>
+    </div>
+    <div>
+        <span>
+            <%= "0$" %>
+        </span>
+    </div>
+</div>
+<% end %>
+<div class="d-flex justify-content-center p-5">
+<%= button_to "create catagory", catagory_new_path, method: :get,class:"btn btn-success" %>
+</div>
+</div>
