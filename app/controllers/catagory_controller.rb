@@ -11,7 +11,7 @@ class CatagoryController < ApplicationController
     @new_catagory = Catagory.new(catagory_params)
     @new_catagory.author = current_user
     if @new_catagory.save
-      redirect_to "/catagory/index"
+      redirect_to '/catagory/index'
     else
       render :new
     end
