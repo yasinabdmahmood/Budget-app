@@ -1,16 +1,16 @@
 <%= render partial: '/partials/navbar',locals: {p: catagory_index_path, title: 'Catagories'} %>
-<h1>Catagory#new</h1>
-<p>Find me in app/views/catagory/new.html.erb</p>
+<div class="container p-3 d-flex flex-column align-items-stretch">
 <%= form_with model: @new_catagory, url: catagory_create_path, method: :post, local: true, scope: :new_catagory do |f| %>
-    <div>
+    <div class="form-group">
     <%= f.label :Name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name,class:"form-control" %>
     </div>
 
-    <div>
+    <div class="form-group">
     <%= f.label :Icon %><br>
-    <%= f.text_field :icon %>
+    <%= f.text_field :icon,class:"form-control"%>
     </div>
 
-    <%= f.submit "Save" %>
+    <%= f.submit "Save",class:"btn btn-primary" %>
 <% end %>
+</div>
