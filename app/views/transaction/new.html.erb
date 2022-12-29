@@ -12,6 +12,9 @@
     <%= f.number_field  :amount %>
     </div>
     <div class="form-group">
+        <%= f.select :catagory, @catagories %>
+    </div>
+    <div class="form-group">
         <%= f.hidden_field :catagory_id, value: @catagory_id %>
     </div>
 

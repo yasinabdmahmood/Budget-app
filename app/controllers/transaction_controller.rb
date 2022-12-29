@@ -8,11 +8,11 @@ class TransactionController < ApplicationController
     @new_record = Record.new(name: transaction_params[:name], amount: transaction_params[:amount])
     @new_record.author = current_user
     @new_record.save
-    @selected_catagory = Catagory.find(transaction_params[:catagory_id])
+    @selected_catagory = Catagory.find(transaction_params[:catagory])
     @new_catagory_record = CatagoryRecord.new(record: @new_record, catagory: @selected_catagory)
     @new_catagory_record.save
     if @new_catagory_record.save && @new_record.save
-      redirect_to "/transaction/index/#{transaction_params[:catagory_id]}"
+      redirect_to "/transaction/index/#{transaction_params[:catagory]}"
     else
       render :new
     end
@@ -27,6 +27,6 @@ class TransactionController < ApplicationController
   private
 
   def transaction_params
-    params.require(:new_record).permit(:name, :amount, :catagory_id)
+    params.require(:new_record).permit(:name, :amount, :catagory_id,:catagory)
   end
 end
