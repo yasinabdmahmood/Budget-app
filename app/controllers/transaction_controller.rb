@@ -1,6 +1,6 @@
 class TransactionController < ApplicationController
   def index
-    @records = current_user.records.select { |record| record.catagory_records[0].catagory.id == params[:id].to_i}
+    @records = current_user.records.select { |record| record.catagory_records[0].catagory.id == params[:id].to_i }
   end
 
   def create
