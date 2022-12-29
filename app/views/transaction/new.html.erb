@@ -1,0 +1,23 @@
+<%= render partial: '/partials/navbar',locals: {p: @catagory_page_path, title: 'Transactions'} %>
+<div class="container p-3 d-flex flex-column align-items-stretch">
+<h1 class="text-center mb-5">Create new transaction</h1>
+<%= form_with model: @new_record, url: transaction_create_path,class:"align-self-strech", method: :post, local: true, scope: :new_record do |f| %>
+    <div class="form-group">
+    <%= f.label :Name %><br>
+    <%= f.text_field :name,class:"form-control" %>
+    </div>
+
+    <div class="form-group">
+    <%= f.label :Amount %><br>
+    <%= f.number_field  :amount,class:"form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.select :catagory, @catagories,class:"form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.hidden_field :catagory_id, value: @catagory_id %>
+    </div>
+
+    <%= f.submit "Save",class:"btn btn-primary" %>
+<% end %>
+</div>

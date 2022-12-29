@@ -1,9 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
   before_action :update_allowed_parameters, if: :devise_controller?
-
-  before_action :authenticate_user!
 
   protected
 
@@ -12,8 +9,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:name, :email, :password, :current_password) }
   end
 
-  def after_sign_out_path_for(_resource_or_scope)
-    request.referrer
-    '/users/sign_in'
+  def after_sign_out_path_for(_resource)
+    splash_index_path
+  end
+
+  def after_sign_in_path_for(_resource)
+    catagory_index_path
   end
 end
