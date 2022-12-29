@@ -3,7 +3,6 @@ class Catagory < ApplicationRecord
 
   has_many :catagory_records, dependent: :destroy
 
-
   # validations
   validates :name, presence: true
   validates :icon, presence: true
