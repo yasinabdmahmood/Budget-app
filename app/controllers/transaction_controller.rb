@@ -1,4 +1,5 @@
 class TransactionController < ApplicationController
+  before_action :authenticate_user!
   def index
     @records = current_user.records.select { |record| record.catagory_records[0].catagory.id == params[:id].to_i }
     @catagory_id = params[:id]
@@ -28,6 +29,6 @@ class TransactionController < ApplicationController
   private
 
   def transaction_params
-    params.require(:new_record).permit(:name, :amount, :catagory_id,:catagory)
+    params.require(:new_record).permit(:name, :amount, :catagory_id, :catagory)
   end
 end

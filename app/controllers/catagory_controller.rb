@@ -1,4 +1,5 @@
 class CatagoryController < ApplicationController
+  before_action :authenticate_user!
   def index
     @catagories = current_user.catagories
   end
