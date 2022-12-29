@@ -13,7 +13,7 @@ class CatagoryController < ApplicationController
     if @new_catagory.save
       redirect_to '/catagory/index'
     else
-      render :new
+      redirect_to :new
     end
   end
 

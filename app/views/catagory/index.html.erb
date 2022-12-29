@@ -1,7 +1,9 @@
 <h1>Catagory#index</h1>
 <p>Find me in app/views/catagory/index.html.erb</p>
 <div class="container">
+
 <% @catagories.each do |catagory| %>
+<a href=<%= transaction_index_path_url(id: catagory.id)%> style="text-decoration: none;color: inherit;">
 <div  class='d-flex justify-content-between p-2 my-3 border'>
     <div>
     <img 
@@ -16,11 +18,12 @@
     </div>
     <div>
         <span>
-            <%= "0$" %>
+            <%= "0$" %>  
         </span>
     </div>
 </div>
 <% end %>
+</a>
 <div class="d-flex justify-content-center p-5">
 <%= button_to "create catagory", catagory_new_path, method: :get,class:"btn btn-success" %>
 </div>
