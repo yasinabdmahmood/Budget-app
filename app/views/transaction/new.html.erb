@@ -1,5 +1,6 @@
 <h1>Transaction#new</h1>
 <p>Find me in app/views/transaction/new.html.erb</p>
+<h1><%= @catagory_id %></h1>
 <%= form_with model: @new_record, url: transaction_create_path, method: :post, local: true, scope: :new_record do |f| %>
     <div>
     <%= f.label :Name %><br>
@@ -11,7 +12,7 @@
     <%= f.number_field  :amount %>
     </div>
     <div class="form-group">
-        <%= f.select :catagory, @catagories %>
+        <%= f.hidden_field :catagory_id, value: @catagory_id %>
     </div>
 
     <%= f.submit "Save" %>

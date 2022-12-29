@@ -18,6 +18,6 @@
 </div>
 <% end %>
 <div class="d-flex justify-content-center p-5">
-<%= button_to "Create transaction", transaction_new_path, method: :get,class:"btn btn-success" %>
+<%= button_to "Create transaction", transaction_new_path_url(id: @catagory_id), method: :get,class:"btn btn-success" %>
 </div>
 </div>
