@@ -22,6 +22,7 @@ class TransactionController < ApplicationController
     @new_record = Record.new
     @catagories = current_user.catagories.map { |catagory| [catagory.name, catagory.id] }
     @catagory_id = params[:id]
+    @catagory_page_path = transaction_index_path_url(id: params[:id])
   end
 
   private

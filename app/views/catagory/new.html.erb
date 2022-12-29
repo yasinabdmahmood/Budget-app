@@ -1,3 +1,4 @@
+<%= render partial: '/partials/navbar',locals: {p: catagory_index_path, title: 'Catagories'} %>
 <h1>Catagory#new</h1>
 <p>Find me in app/views/catagory/new.html.erb</p>
 <%= form_with model: @new_catagory, url: catagory_create_path, method: :post, local: true, scope: :new_catagory do |f| %>
