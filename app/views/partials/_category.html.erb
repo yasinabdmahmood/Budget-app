@@ -8,7 +8,7 @@
     </div>
     <div class="flex-grow-1 px-2">
         <h2><%= catagory.name%></h2>
-        <span><%= catagory.created_at %></span>
+        <span><%= catagory.created_at.strftime("%d  %B %Y at %I:%M %p") %></span>
     </div>
     <div>
         <span>

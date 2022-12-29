@@ -1,10 +1,9 @@
 <%= render partial: '/partials/navbar',locals: {p: catagory_index_path, title: 'Catagories'} %>
-<h1>Catagory#index</h1>
-<div class="container">
+<div class="container bg-light">
 
-<% @catagories.each do |catagory| %>
+<% @catagories.each_with_index do |catagory,idx| %>
 <a href=<%= transaction_index_path_url(id: catagory.id)%> style="text-decoration: none;color: inherit;">
-<div  class='d-flex justify-content-between p-2 my-3 border'>
+<div  class='d-flex justify-content-between p-2 my-3 border bg-white'>
     <div>
     <img 
     class="icon" 
@@ -12,13 +11,13 @@
     src=<%= catagory.icon %>
     alt="face" />
     </div>
-    <div class="flex-grow-1 px-2">
+    <div class="flex-grow-1 px-1">
         <h2><%= catagory.name%></h2>
-        <span><%= catagory.created_at %></span>
+        <small class="text-muted"><%= catagory.created_at.strftime("%d  %B %Y at %I:%M %p") %></small>
     </div>
     <div>
         <span>
-            <%= "0$" %>  
+            <%= @totals[idx] %>$  
         </span>
     </div>
 </div>

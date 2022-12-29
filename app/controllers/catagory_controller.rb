@@ -1,7 +1,10 @@
 class CatagoryController < ApplicationController
   before_action :authenticate_user!
   def index
-    @catagories = current_user.catagories
+    @catagories = current_user.catagories.includes(:catagory_records)
+    @totals = @catagories.map do |catagory|
+      catagory.catagory_records.reduce(0) { |sum, num| sum + num.record.amount }
+    end 
   end
 
   def new
