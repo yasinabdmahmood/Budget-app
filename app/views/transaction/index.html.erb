@@ -1,24 +1,25 @@
 <%= render partial: '/partials/navbar',locals: {p: catagory_index_path, title: 'Transactions'} %>
-<h1>Transaction#index</h1>
-<p>Find me in app/views/transaction/index.html.erb</p>
-<div class="container">
+
+<div class="container bg-light">
+<%= render partial: '/partials/category',locals: {catagory: @catagory, total:@total} %>
 <% @records.each do |record| %>
-<div  class='d-flex flex-column justify-content-start p-2 my-3 border'>
+<div  class='d-flex flex-column justify-content-start p-2 my-3 border bg-white'>
     <div class="flex-grow-1 px-2">
         <h2><%= record.name%></h2>
         
     </div>
-    <div>
+    <div class="d-flex justify-content-between">
+        <span>Amount</span>
         <span>
-            <%= record.amount %> $
+            <%= record.amount %> $  
         </span>
     </div>
     <div>
-    <span><%= record.created_at %></span>
+    <span><%= record.created_at.strftime("%d  %B %Y at %I:%M %p")  %></span>
     </div>
 </div>
 <% end %>
 <div class="d-flex justify-content-center p-5">
-<%= button_to "Create transaction", transaction_new_path_url(id: @catagory_id), method: :get,class:"btn btn-success" %>
+<%= button_to "Create transaction", transaction_new_path_url(id: @catagory_id), method: :get,class:"btn btn-success btn-lg" %>
 </div>
 </div>

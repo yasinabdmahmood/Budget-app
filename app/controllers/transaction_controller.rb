@@ -2,7 +2,10 @@ class TransactionController < ApplicationController
   before_action :authenticate_user!
   def index
     @records = current_user.records.select { |record| record.catagory_records[0].catagory.id == params[:id].to_i }
+    @total = @records.reduce(0) { |sum, num| sum + num.amount }
+
     @catagory_id = params[:id]
+    @catagory = Catagory.find(@catagory_id)
   end
 
   def create
