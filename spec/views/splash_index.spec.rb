@@ -7,8 +7,6 @@ RSpec.describe 'Transaction new page', type: :feature do
     @category2 = Catagory.create(name: 'category_2', icon: 'http:/abc', author: @user)
     @record1 = Record.create(name: 'tr1', amount: 10, author: @user)
     @catagory_record1 = CatagoryRecord.create(record: @record1, catagory: @category1)
-
-
     visit splash_index_path
   end
 
