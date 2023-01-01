@@ -14,22 +14,16 @@ RSpec.describe 'User index page', type: :feature do
       expect(page).to have_content(@category1.name)
       expect(page).to have_content(@category2.name)
     end
-  end
 
-  describe 'catagory index page' do
     it ' -> I can see the picture of the  Catagory images.' do
       find("img[src='http:/abc']")
       find("img[src='http:/xyz']")
     end
-  end
 
-  describe 'catagory index page' do
     it ' -> I can see the word Catagories on the navbar.' do
       expect(page).to have_content('Catagories')
     end
-  end
 
-  describe 'catagory index page' do
     it ' -> I can see the word Catagories on the navbar.' do
       expect(page).to have_content('create catagory')
     end
