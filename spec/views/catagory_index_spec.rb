@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User index page', type: :feature do
+RSpec.describe 'Catagory index page', type: :feature do
   before(:example) do
     @user = User.create(name: 'Yaseen', email: 'test@test.com', password: 'password', password_confirmation: 'password')
     @category1 = Catagory.create(name: 'category_1', icon: 'http:/xyz', author: @user)
