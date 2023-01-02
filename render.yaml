@@ -1,0 +1,22 @@
+databases:
+ - name: postgres 
+   ipAllowlist: [] 
+
+services:
+ - type: web 
+   name: rails 
+   env: ruby 
+   buildConnand: "./bin/render-build.sh" 
+   startConmand: bundle exec rails s 
+   envVars: 
+      - key: RAILS_MASTER_KEY 
+      sync: false 
+      - key: DATABASE_ORL 
+      fronbatabase: 
+        name: postgres 
+        property: connectionString 
+ - type: redis 
+  name: redis 
+  ipAllowlist: []
+  plan: free 
+  naxmenoryPolicy: noeviction
