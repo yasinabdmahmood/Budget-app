@@ -27,4 +27,5 @@ services:
         value: 'spree123'
   - type: redis
     name: spree_redis
+    plan: free
     ipAllowList: [] # only allow internal connections
