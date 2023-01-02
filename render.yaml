@@ -6,15 +6,15 @@ services:
  - type: web 
    name: rails 
    env: ruby 
-   buildConnand: "./bin/render-build.sh" 
-   startConmand: bundle exec rails s 
+   buildCommand: "./bin/render-build.sh" 
+   startCommand: bundle exec rails s 
    envVars: 
       - key: RAILS_MASTER_KEY 
-      sync: false 
+        sync: false 
       - key: DATABASE_ORL 
-      fronbatabase: 
-        name: postgres 
-        property: connectionString 
+        fromDatabase: 
+          name: postgres 
+          property: connectionString 
  - type: redis 
   name: redis 
   ipAllowlist: []
