@@ -182,7 +182,12 @@ To run tests, run the following command:
 
 <!-- FUTURE FEATURES -->
 
+## 🔭 Future Features <a name="future-features"></a>
 
+- [ ] **[Add Google sign-in authentication style]**
+- [ ] **[New page to show annual budget report]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
 
