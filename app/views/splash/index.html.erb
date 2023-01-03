@@ -1,0 +1,17 @@
+<div class="container-fluid text-center">
+  <div class="position-absolute top-50 start-50 translate-middle w-50">
+    <h1 >Budget App</h1>
+
+    <div class="">
+      <% if user_signed_in? %>
+        <p>Welcome, <%= current_user.name %></p>
+        <em>You are signed in!</em>
+        <%= button_to 'Go to categories', catagory_index_path,  method: :get,  class: 'btn btn-primary  w-75 mt-5' %>
+        <%= button_to 'Log out', destroy_user_session_path,  method: :delete,  class: 'btn btn-primary w-75 mt-2' %>
+      <% else %>
+        <%= link_to  'Log in', user_session_path, class: 'btn btn-primary  w-75 mt-5' %>
+        <%= button_to  'Sign Up', new_user_registration_path, method: :get, class: 'btn signup-btn w-75 mt-3' %>
+      <% end %>
+    </div>
+  </div>
+</div>

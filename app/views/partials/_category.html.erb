@@ -1,0 +1,18 @@
+<div  class='d-flex justify-content-between p-2 py-5 my-3 border bg-white'>
+    <div>
+    <img 
+    class="icon" 
+    style="width:50px"
+    src=<%= catagory.icon %>
+    alt="face" />
+    </div>
+    <div class="flex-grow-1 px-2">
+        <h2><%= catagory.name%></h2>
+        <span><%= catagory.created_at.strftime("%d  %B %Y at %I:%M %p") %></span>
+    </div>
+    <div>
+        <span>
+            <%= total %> $  
+        </span>
+    </div>
+</div>

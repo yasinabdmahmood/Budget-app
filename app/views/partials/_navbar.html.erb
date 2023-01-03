@@ -1,0 +1,9 @@
+<nav class="navbar navbar-light bg-primary justify-content-between p-2">
+  <a class="navbar-brand" href=<%=p%>>
+  <img  src=<%= image_path("arrow-left.svg") %> style="width:50px;" class="rounded-7"/>
+  </a>
+  <span class='h1 text-white'><%= title%></span>
+  <%= button_to "Logout", destroy_user_session_path, method: :delete,class:"btn btn-light" %>
+</nav>
+
+
