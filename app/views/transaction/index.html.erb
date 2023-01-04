@@ -2,6 +2,9 @@
 
 <div class="container bg-light">
 <%= render partial: '/partials/category',locals: {catagory: @catagory, total:@total} %>
+<% if @records.length == 0 %>
+ <h2 class="text-center mt-5">You have no transactions associated with this category</h2>
+<% end %>
 <% @records.each do |record| %>
 <div  class='d-flex flex-column justify-content-start p-2 my-3 border bg-white'>
     <div class="flex-grow-1 px-2">
